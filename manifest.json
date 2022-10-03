@@ -27,6 +27,6 @@
     "host_permissions": ["https://apis.naver.com/*", "https://cafe.naver.com/*"],
     "content_scripts": [{
         "matches": ["https://cafe.naver.com/*"],
-        "js": ["popup.js"]
+        "js": ["newPopup.js"]
     }]
 }

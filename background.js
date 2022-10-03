@@ -1,21 +1,10 @@
 // background.js
-
-let color = '#3aa757';
-
 chrome.runtime.onInstalled.addListener(function(message, callback) {
     if (message == "runContentScript") {
         chrome.tabs.executeScript({
             file: 'contentScript.js'
         });
     }
-
-    let [tab] = [];
-    let allArticle = "";
-    (async() => {
-        [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-        allArticle = await getSearchUrl();
-    })();
-    console.log(allArticle);
 });
 
 async function getSearchUrl() {
